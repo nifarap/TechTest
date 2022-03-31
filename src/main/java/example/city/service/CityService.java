@@ -5,15 +5,13 @@ import example.city.exception.RecordNotFoundException;
 import example.city.repository.CityRepository;
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@Repository
 @RequiredArgsConstructor
 public class CityService {
 
@@ -25,7 +23,7 @@ public class CityService {
         if (cityList.size() > 0) {
             return cityList;
         } else {
-            return new ArrayList<City>();
+            return Collections.emptyList();
         }
     }
 
