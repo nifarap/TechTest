@@ -4,6 +4,7 @@ import example.city.domain.entity.City;
 import example.city.exception.RecordNotFoundException;
 import example.city.repository.CityRepository;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -38,23 +39,23 @@ public class CityService {
         }
     }
 
-    public City createOrUpdateCity(City city_entity) {
-        Optional<City> city = cityRepository.findById(city_entity.getId());
+    public City createOrUpdateCity(City cityEntity) {
+        Optional<City> city = cityRepository.findById(cityEntity.getId());
 
         if (city.isPresent()) {
             City newCity = city.get();
-            newCity.setName(city_entity.getName());
-            newCity.setCountryCode(city_entity.getCountryCode());
-            newCity.setDistrict(city_entity.getDistrict());
-            newCity.setPopulation(city_entity.getPopulation());
+            newCity.setName(cityEntity.getName());
+            newCity.setCountryCode(cityEntity.getCountryCode());
+            newCity.setDistrict(cityEntity.getDistrict());
+            newCity.setPopulation(cityEntity.getPopulation());
 
-            newCity = cityRepository.save(city_entity);
+            newCity = cityRepository.save(cityEntity);
 
             return newCity;
         } else {
-            city_entity = cityRepository.save(city_entity);
+            cityEntity = cityRepository.save(cityEntity);
 
-            return city_entity;
+            return cityEntity;
         }
     }
 
