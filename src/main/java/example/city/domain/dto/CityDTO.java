@@ -1,6 +1,7 @@
 package example.city.domain.dto;
 
 import lombok.Data;
+
 import java.io.Serializable;
 
 @Data

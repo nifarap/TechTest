@@ -4,7 +4,6 @@ import example.city.domain.entity.City;
 import example.city.exception.RecordNotFoundException;
 import example.city.repository.CityRepository;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;

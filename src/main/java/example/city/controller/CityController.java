@@ -37,12 +37,12 @@ public class CityController {
     }
 
     @PostMapping("/create")
-    public void createCity(CityDTO city) throws RecordNotFoundException {
+    public void createCity(CityDTO city) {
         service.createOrUpdateCity(mapper.map(city));
     }
 
     @PostMapping("/update")
-    public void updateCity(CityDTO city) throws RecordNotFoundException {
+    public void updateCity(CityDTO city) {
         service.createOrUpdateCity(mapper.map(city));
     }
 
